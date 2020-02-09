@@ -59,3 +59,15 @@ console.log('The counter2.value() is:', counter2.value())
 // time
 
 counter1 = null
+
+
+
+
+
+
+
+
+{
+  "a": 99
+  "z": 1
+}
