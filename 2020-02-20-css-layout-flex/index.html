@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Layout with Flex - Thu Feb 20 2020</title>
+
+  <style type="text/css">
+  .parent-box {
+    border: 2px solid blue;
+    display: flex;
+  }
+  .parent-box > * {
+    border: 2px solid green;
+    padding: 10px;
+    flex-grow: 1;
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="scratch.css">
+</head>
+<body>
+  <div class="parent-box">
+    <!-- <div class="child-box">child 1<small>something</small></div> -->
+    <div class="child-box">child 2</div>
+    <div class="child-box">child 3</div>
+    <div class="child-box">child 4</div>
+    <div class="child-box">child 5</div>
+  </div>
+</body>
+</html>
