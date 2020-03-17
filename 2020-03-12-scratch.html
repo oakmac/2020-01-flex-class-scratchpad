@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <title>JS Events</title>
+  <style type="text/css">
+  .silly {
+    background: #dadafd;
+  }
+  </style>
+</head>
+<body>
+  <header id="theHeader" style="background: orange">
+    <h1>Syntax Error Saturday</h1>
+    <button id="showSillyBtn">Show the silly</button>
+    <button id="hideSillyBtn">Hide the silly</button>
+  </header>
+
+  <main>
+    <p class="silly">Oh no, it's scary. JavaScript</p>
+    <p class="silly" id="timsParagraph">Oh no, it's scary. JavaScript</p>
+    <p class="silly">Oh no, it's scary. JavaScript</p>
+    <p id="scottsParagraph">Oh no, it's scary. JavaScript</p>
+    <p>Oh no, it's scary. JavaScript</p>
+    <p>Oh no, it's scary. JavaScript</p>
+  </main>
+
+  <footer>
+    <p><a href="https://digitalcrafts.com">DigitalCrafts 2020</a></p>
+  </footer>
+
+  <script>
+
+  function clickBtn (evt) {
+    console.log('lets look at the event object:')
+    console.log(evt.currentTarget)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  }
+
+  const bodyEl = document.body
+  const headerEl = document.getElementById('theHeader')
+  const showSillyBtn = document.getElementById('showSillyBtn')
+  const hideSillyBtn = document.getElementById('hideSillyBtn')
+
+  const footerLink = document.querySelector('footer a')
+  footerLink.addEventListener('click', clickFooterLink)
+
+  function clickFooterLink (evt) {
+    evt.preventDefault()
+    console.log('hey - you clicekd a footer link!')
+    window.location.href = 'https://techbootcamps.utexas.edu/coding/'
+  }
+
+  function clickHeader (evt) {
+    console.log('click header!')
+  }
+
+  function clickSillyBtn (evt) {
+    evt.stopPropagation()
+    console.log('click silly!')
+  }
+
+  // bodyEl.addEventListener('click', clickBtn)
+  headerEl.addEventListener('click', clickHeader)
+  showSillyBtn.addEventListener('click', clickSillyBtn)
+  // hideSillyBtn.addEventListener('click', clickBtn)
+
+
+
+
+  const basketballGame = [
+    {
+      name: 'Toronto Raptors',
+      numFouls: 2,
+      players: [
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: false
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        },
+        {
+          name: '',
+          number: 41,
+          numPoints: 0,
+          onCourt: true
+        }
+      ]
+    },
+    {
+      name: 'Houston Rockets',
+      numFouls: 0
+    }
+  ]
+
+
+
+
+
+
+  </script>
+</body>
+</html>
