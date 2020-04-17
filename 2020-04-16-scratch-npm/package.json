@@ -1,0 +1,20 @@
+{
+  "name": "banana",
+  "version": "1.0.0",
+  "description": "helps you find delicious bananas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '*.js'"
+  },
+  "author": "Chris Oakman",
+  "license": "ISC",
+  "dependencies": {
+    "kidif": "^1.1.0",
+    "lodash": "^4.17.15",
+    "snowflake-css": "0.0.7"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.4"
+  }
+}
