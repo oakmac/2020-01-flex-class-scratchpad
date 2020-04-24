@@ -1,0 +1,35 @@
+{
+  "aubrey": {
+    "fname": "Aubrey",
+    "lname": "Snider",
+    "favFruit": "cherry"
+  },
+  "oakmac": {
+    "fname": "Chris",
+    "lname": "Oakman",
+    "favFruit": "banana"
+  },
+  "shawn": {
+    "fname": "Shawn",
+    "lname": "Benny",
+    "favFruit": "watermelon"
+  },
+  "example_user": {
+    "username": "example_user",
+    "fname": "Example",
+    "lname": "Fun",
+    "favFruit": "45"
+  },
+  "billy": {
+    "username": "billy",
+    "fname": "Billy",
+    "lname": "Billy (also his last name)",
+    "favFruit": "Trout"
+  },
+  "evil": {
+    "username": "evil",
+    "fname": "<script>alert(\"bad bad bad\");</script>",
+    "lname": "Trouble",
+    "favFruit": "Causing problems for you"
+  }
+}

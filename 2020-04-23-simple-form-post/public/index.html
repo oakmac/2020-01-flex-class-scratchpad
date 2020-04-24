@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Form</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <h1>Simple Form Example</h1>
+  <p>Please create an account:</p>
+
+  <form action="/create-account" method="post">
+    <fieldset>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname"><br>
+
+      <label for="favFruit">Favorite fruit:</label><br>
+      <input type="text" id="favFruit" name="favFruit"><br>
+
+      <input type="submit" value="Create Account">
+    </fieldset>
+  </form>
+
+  <script src="js/popper.js"></script>
+</body>
+
+</html>
