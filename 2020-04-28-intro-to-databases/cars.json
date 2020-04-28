@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1223,
+    "bodyStyle": "sedan",
+    "color": "blue",
+    "make": "Toyota",
+    "mileage": 123400,
+    "model": "Corolla",
+    "price": 6000,
+    "year": "2006"
+  },
+  {
+    "id": 4673,
+    "bodyStyle": "sedan",
+    "color": "blue",
+    "make": "Toyota",
+    "mileage": 89500,
+    "model": "Camry",
+    "price": 8350,
+    "year": "2011"
+  },
+  {
+    "id": 9981,
+    "bodyStyle": "truck",
+    "color": "red",
+    "make": "Ford",
+    "model": "F-150",
+    "mileage": 32100,
+    "price": 28500,
+    "year": "2015"
+  },
+  {
+    "id": 8812,
+    "bodyStyle": "truck",
+    "color": "silver",
+    "make": "Ford",
+    "model": "F-150",
+    "mileage": 28200,
+    "price": 29000,
+    "year": "2015"
+  },
+  {
+    "id": 3313,
+    "bodyStyle": "truck",
+    "color": "black",
+    "make": "Toyota",
+    "model": "Tacoma",
+    "mileage": 54000,
+    "price": 22000,
+    "year": "2011"
+  }
+]
