@@ -1,17 +1,13 @@
-big-oh notation
-O(N)
-
 [
   {
-    "id": "car-1223",
+    "id": 1223,
     "bodyStyle": "sedan",
     "color": "blue",
     "make": "Toyota",
     "mileage": 123400,
     "model": "Corolla",
     "price": 6000,
-    "year": "2006",
-    "vin": "12251235kjaldfasdfasd"
+    "year": "2006"
   },
   {
     "id": 4673,
