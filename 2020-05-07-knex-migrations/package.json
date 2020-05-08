@@ -1,0 +1,11 @@
+{
+  "name": "basic-knex-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "",
+  "dependencies": {
+    "knex": "^0.21.1",
+    "pg": "^8.0.3"
+  }
+}
