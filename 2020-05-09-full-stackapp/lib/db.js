@@ -32,10 +32,29 @@ function getLists () {
     })
 }
 
+const getListQuery = `SELECT * FROM list WHERE uuid = ?`
+
+function getList (uuid) {
+  return new Promise(function (resolve, reject) {
+    conn.raw(getListQuery, [uuid])
+      .then((result) => {
+        if (result && result.rows && result.rows.length === 1) {
+          resolve(result.rows[0])
+        } else {
+          reject('list not found')
+        }
+      })
+      .catch(() => {
+        reject("getList query failed")
+      })
+  })
+}
+
 // -----------------------------------------------------------------------------
 // Public API
 
 module.exports = {
   connect: connect,
-  getLists: getLists
+  getLists: getLists,
+  getList: getList
 }

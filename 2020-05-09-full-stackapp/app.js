@@ -11,17 +11,6 @@ const port = 7878
 // set the template engine
 app.set('view engine', 'hbs')
 
-const dummyLists = [
-  {
-    uuid: 'asdfasdfasdfsdaf',
-    name: 'Grocery List'
-  },
-  {
-    uuid: 'werqwerqwerewreqw',
-    name: 'Todo List'
-  }
-]
-
 const dummyItems = [
   {
     uuid: 'asdfasdfasdfsdaf',
@@ -35,10 +24,17 @@ const dummyItems = [
   }
 ]
 
-// app.param('id', function (req, res, next, id) {
-//   console.log('CALLED ONLY ONCE')
-//   next()
-// })
+app.param('listUUID', function (req, res, nextFn, listUUID) {
+  db.getList(listUUID)
+    .then((theList) => {
+      req.mr_listman = req.mr_listman || {}
+      req.mr_listman.list = theList
+      nextFn()
+    })
+    .catch(() => {
+      res.status(404).send('list not found')
+    })
+})
 
 // the homepage shows your lists
 app.get('/', function (req, res) {
@@ -53,7 +49,8 @@ app.get('/', function (req, res) {
 
 // the list page shows the items in the list
 app.get('/list/:listUUID', function (req, res) {
-  res.render('list_page', { listName: 'Dummy List', items: dummyItems })
+  const theList = req.mr_listman.list
+  res.render('list_page', { listName: theList.name, items: dummyItems })
 })
 
 const startExpressApp = () => {
