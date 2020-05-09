@@ -1,5 +1,6 @@
 const knexLib = require('knex')
 const dbCfg = require('../knexfile')
+const { uuid } = require('./utils')
 
 // this will hold our database connection
 let conn = null
@@ -34,20 +35,50 @@ function getLists () {
 
 const getListQuery = `SELECT * FROM list WHERE uuid = ?`
 
+const getListItemsQuery = `
+  SELECT *
+  FROM list_items
+  WHERE list_id = ?
+  ORDER BY display_order
+  `
+
 function getList (uuid) {
   return new Promise(function (resolve, reject) {
     conn.raw(getListQuery, [uuid])
       .then((result) => {
         if (result && result.rows && result.rows.length === 1) {
-          resolve(result.rows[0])
+          return result.rows[0]
         } else {
           reject('list not found')
         }
+      })
+      .then((theList) => {
+        conn.raw(getListItemsQuery, [theList.id])
+          .then((result) => {
+            theList.items = result.rows
+            resolve(theList)
+          })
+          .catch(() => {
+            reject('unable to get listItems')
+          })
       })
       .catch(() => {
         reject("getList query failed")
       })
   })
+}
+
+const createItemQuery = `
+  INSERT INTO list_items (uuid, description, display_order, ctime, mtime, list_id)
+  VALUES (?, ?, ?, current_timestamp, current_timestamp, ?)
+  RETURNING *
+  `
+
+function createItem (listId, description) {
+  return conn.raw(createItemQuery, [uuid(), description, 999, listId])
+    .then((result) => {
+      return result.rows[0]
+    })
 }
 
 // -----------------------------------------------------------------------------
@@ -56,5 +87,6 @@ function getList (uuid) {
 module.exports = {
   connect: connect,
   getLists: getLists,
-  getList: getList
+  getList: getList,
+  createItem: createItem
 }
