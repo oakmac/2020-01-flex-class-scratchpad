@@ -56,11 +56,11 @@ console.assert(
 // -----------------------------------------------------------------------------
 // The Store
 
-// Initialize the Redux store by passing it our reducer (defined globally in reducer.js)
+// Initialize the Redux store by passing it our reducer function
 const theStore = window.Redux.createStore(reducer)
 
 // Re-render the application every time the state changes
-// Here we pass the Redux state to our render method (defined globally in render.js)
+// Here we pass the Redux state to our render method (ie: updateDOM)
 theStore.subscribe(updateDOM)
 theStore.subscribe(logCurrentStoreValue)
 
@@ -139,6 +139,8 @@ function logCurrentStoreValue () {
 // global page initialization
 function init () {
   addEvents()
+
+  // initialize our store by dispatching a dummy 'INIT' action
   theStore.dispatch({type: 'INIT'})
 }
 
