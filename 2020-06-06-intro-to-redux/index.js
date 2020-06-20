@@ -74,8 +74,13 @@ const minusFiveBtnEl = byId('minusFiveBtn')
 const addListemItemBtnEl = byId('addListItemBtn')
 const itemTextInputEl = byId('textInput1')
 
+function createIncrementAction () {
+  return {type: 'INCREMENT'}
+}
+
 function clickIncrementBtn () {
-  theStore.dispatch({type: 'INCREMENT'})
+  // theStore.dispatch({type: 'INCREMENT'})
+  theStore.dispatch(createIncrementAction())
 }
 
 function clickDecrementBtn () {
